@@ -8,7 +8,7 @@ const translations = {
         myInventory: "My Inventory",
     },
 
-    spa: {
+    esp: {
         appName: 'Pokedex de TCG Pokemon',
         loginSSO: "Iniciar sesión con SSO",
         scanCard: "Escanea tu carta",

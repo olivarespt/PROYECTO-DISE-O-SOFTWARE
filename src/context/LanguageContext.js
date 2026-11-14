@@ -25,7 +25,7 @@ const translations = {
 export const LanguageContext = createContext();
 
 export const LanguageProvider = ({children}) => {
-    const [language, setLanguage] = useState('eng'); //lenguaje default inglés
+    const [language, setLanguage] = useState('esp'); //lenguaje default inglés
 
     const t = (key) => {
         return translations[language][key] || key;

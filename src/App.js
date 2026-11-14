@@ -1,27 +1,44 @@
-import react from 'react'; //importo los lenguajes
-import {LanguageProvider} from './context/LanguageContext'; //importo el provider del contexto de lenguaje
-import Navbar from './components/Navbar';
+import React, {useContext} from 'react';
+import {languageContext} from '../context/LanguageContext';
 
-function App() {
-    return (
-        <LanguageProvider>  
-            {/*Container principal de la app*/}
-            <div className="min-h-screen bg-gray-100">
-                {/*navbar fija arriba*/}
-                <Navbar />
+const Navbar = () => {
+  const  {language, setLanguage, t} = useContext(LanguageContext); //conexión con el contexto de lenguaje
+  //handler del login SSO
+  const handleSSOLogin = () => {
+    console.log("Connecting to SSO Provider (e.g., Google, Auth0)...");
+  };
 
-                {/*contenedor del contenido (valga la redundancia) de páginas*/}
-                <main className="p-4 flex flex-col items-center justify-center h-[calc(100vh-80px)]">
-                    {/*cambiar después*/}
-                    <h1 className="text-4xl font-bold text-gray-400 text-center mb-4">
-                        Bienvenido a tu Pokédex de Pokémon TCG</h1>
-                    <p className="text-gray-500">
-                        Escanea tu carta
-                        </p>
-                    </main>
-                </div>
-        </LanguageProvider>
-    );
-}
+  return(
+    <nav className="w-full bg-red-600 text-white p-4 shadow-md flex justify-between items-center flex-wrap">
+      
+      {/* titulo de la app */}
+      <div className="text-2xl font-bold tracking-wider">
+        {t('appName')}
+      </div>
 
-export default App;
+      {/* Controles: Lenguaje y SSO */}
+      <div className="flex items-center gap-4 mt-2 sm:mt-0">
+        
+        {/* Cambio de lenguaje */}
+        <select 
+          value={language} 
+          onChange={(e) => setLanguage(e.target.value)}
+          className="text-black px-2 py-1 rounded cursor-pointer outline-none"
+        >
+          <option value="es">Español</option>
+          <option value="en">English</option>
+        </select>
+
+        {/* SSO Login Button */}
+        <button 
+          onClick={handleSSOLogin}
+          className="bg-white text-red-600 font-semibold px-4 py-2 rounded hover:bg-gray-100 transition-colors"
+        >
+          {t('loginSSO')}
+        </button>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;

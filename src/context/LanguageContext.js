@@ -6,6 +6,9 @@ const translations = {
         loginSSO: "Login with SSO",
         scanCard: "Scan Card",
         myInventory: "My Inventory",
+        noImageSelected: "No image selected, upload a card please",
+        startScan: "Identify Card",
+        scanning: "Scanning, please wait ;)"
     },
 
     esp: {
@@ -13,6 +16,9 @@ const translations = {
         loginSSO: "Iniciar sesión con SSO",
         scanCard: "Escanea tu carta",
         myInventory: "Inventario",
+        noImageSelected: "No seleccionaste ninguna imagen, sube tu carta.",
+        startScan: "Identificar carta",
+        scanning: "Escaneando tu carta, por favor espera ;)"
     }
 };
 

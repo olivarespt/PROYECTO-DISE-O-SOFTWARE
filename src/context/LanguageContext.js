@@ -9,7 +9,8 @@ const translations = {
         noImageSelected: "No image selected, upload a card please",
         startScan: "Identify Card",
         scanning: "Scanning, please wait ;)",
-        emptyInventory: "Your inventory is empty :("
+        emptyInventory: "Your inventory is empty :(",
+        saveCard: "Save to inventory"
     },
 
     esp: {
@@ -20,7 +21,8 @@ const translations = {
         noImageSelected: "No seleccionaste ninguna imagen, sube tu carta.",
         startScan: "Identificar carta",
         scanning: "Escaneando tu carta, por favor espera ;)",
-        emptyInventory: "Tu inventario está vacío :("
+        emptyInventory: "Tu inventario está vacío :(",
+        saveCard: "Guardar en el inventario"
     }
 };
 

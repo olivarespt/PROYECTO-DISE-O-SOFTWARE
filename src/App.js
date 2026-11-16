@@ -1,27 +1,25 @@
 import react from 'react'; //importo los lenguajes
 import {LanguageProvider} from './context/LanguageContext'; //importo el provider del contexto de lenguaje
 import Navbar from './components/Navbar';
+import Scanner from './components/Scanner';
+import {InventoryProvider} from './context/InventoryContext';
+import Inventory from './components/Inventory';
 
 function App() {
-    return (
-        <LanguageProvider>  
-            {/*Container principal de la app*/}
-            <div className="min-h-screen bg-gray-100">
-                {/*barra de navegación fija arriba*/}
-                <Navbar />
-
-                {/*contenedor del contenido (valga la redundancia) de páginas*/}
-                <main className="p-4 flex flex-col items-center justify-center h-[calc(100vh-80px)]">
-                    {/*cambiar después*/}
-                    <h1 className="text-4xl font-bold text-gray-400 text-center mb-4">
-                        Bienvenido a tu Pokédex de Pokémon TCG</h1>
-                    <p className="text-gray-500">
-                        Escanea tu carta
-                        </p>
-                    </main>
-                </div>
-        </LanguageProvider>
-    );
+  return (
+    <LanguageProvider>
+      <InventoryProvider>
+        <div className="min-h-screen bg-gray-100">
+          <Navbar />
+          <main className="p-4">
+            <Scanner />
+            <hr className="my-10 border-gray-300" /> 
+            <Inventory />
+          </main>
+        </div>
+      </InventoryProvider>
+    </LanguageProvider>
+  );
 }
 
 export default App;
